@@ -24,19 +24,10 @@ class Temperature {
 		}
 	}
 	
-	/* Zwraca temperature w stopniach Celsjusza */
-	public function getCelsius() {
-		return $this->k - 273.15;
-	}
-	
-	/* Zwraca temperaturę w stopniach Farenheita */
-	public function getFahrenheit() {
-		return ($this->k * 1.8) - 459.67;
-	}
-	
-	/* Zwraca temperaturę w Kelwinach */
-	public function getKelvin() {
-		return $this->k;
+	public function getTemperature($scale) {
+		if($scale == 'K') return $this->k;
+		if($scale == 'F') return ($this->k * 1.8) - 459.67;
+		if($scale == 'C') return $this->k - 273.15;
 	}
 }
 ?>
